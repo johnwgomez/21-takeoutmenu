@@ -73,23 +73,23 @@ def place_order(menu):
         # TODO: The conditional statement should check for 'n' or 'N'
         if keep_ordering.lower() == 'n':
             # TODO: Write a print statement that thanks the customer for their order
-        print("Thank you for your order.")
+            print("Thank you for your order.")
 
             # TODO: Use list comprehension to create a list called prices_list,
             # TODO: which contains the total prices for each item in the order list:
+            prices_list = [item["Price"] * item["Quantity"] for item in order]
             # TODO: The total price for each item should multiply the price by quantity
-
-
             # TODO: Create an order_total from the prices list using sum()
             # TODO: Round the prices to 2 decimal places.
-
+            order_total = round(sum(prices_list), 2)
 
             # TODO: Exit the ordering loop
+            placing_order = False
             # TODO: Either use a break statement or set the condition to False
 
 
     # TODO: Return the order list and the order total
-
+    return order, order_total
 
 def update_order(order, menu_selection, menu_items):
     """
